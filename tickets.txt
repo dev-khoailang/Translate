@@ -1,0 +1,22 @@
+config.php
+
+$source='de';
+$target='en';
+
+run
+
+select a.ticket_id,a.subject,b.message from ost_ticket as a,ost_ticket_message as b where a.ticket_id=b.ticket_id
+and a.status='open';
+
+
+translate a.subject,b.message
+
+insert/update into 
+
+create table ticket_translate (
+id int auto_increment primary key,
+ticket_id int not null,
+subject varchar(250) default '[no subject]',
+message text not null
+);
+
